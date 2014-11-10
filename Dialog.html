@@ -1,0 +1,72 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Dialog</title>
+    <link rel="stylesheet" type="text/css" href="asset/css/demo.css" />
+    <link rel="stylesheet" type="text/css" href="../src/asset/default/main.css" />
+    <link rel="shortcut icon" href="asset/img/favicon.ico"/>
+    <script type="text/javascript" src="asset/js/jquery-1.8.2.min.js"></script>
+    <script type="text/javascript" src="asset/js/require.js"></script>
+    <script type="text/javascript" src="asset/js/config.js"></script>
+</head>
+
+<body>
+<h1>Dialog</h1>
+<a id="console" href="javascript:void(0)">print instance</a>
+<div class="operation">
+    <button type="button" id="show">show</button>
+    <button type="button" id="getContent">getContent</button><br />
+    <button type="button" id="alert">Dialog.alert</button>
+    <button type="button" id="confirm">Dialog.confirm</button><br />
+    <button type="button" id="destroy">destroy</button>
+</div>
+
+<script type="text/javascript">
+require(['ui/Dialog'], function(Dialog) {
+    var dialog = new Dialog({
+        hidden: true,
+        title: 'Title',
+        content: 'Content'
+    });
+    dialog.render();
+    
+    $('#console').click(function() {
+        console.log(dialog);
+    });
+    
+    $('#show').click(function() {
+        dialog.show();
+    });
+    
+    $('#getContent').click(function() {
+        alert(dialog.getContent());
+    });
+    
+    $('#destroy').click(function() {
+        dialog.destroy();
+    });
+    
+    $('#alert').click(function() {
+        Dialog.alert({
+            title: 'Wanning',
+            content: 'Earth is dangerous!',
+            okText: 'Got it'
+        });
+    });
+    
+    $('#confirm').click(function() {
+        Dialog.confirm({
+            title: 'Confirmation',
+            content: 'Go to Mars?',
+            okText: 'Yes',
+            cancelText: 'No',
+            onOK: function() {
+                alert('Good luck!');
+            }
+        });
+    });
+});
+</script>
+</body>
+</html>
