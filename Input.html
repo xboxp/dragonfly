@@ -4,11 +4,10 @@
     <meta charset="utf-8" />
     <title>Input</title>
     <link rel="stylesheet" type="text/css" href="asset/css/demo.css" />
-    <link rel="stylesheet" type="text/css" href="src/asset/default/main.css" />
+    <link rel="stylesheet" type="text/css" href="asset/css/dragonfly.css" />
     <link rel="shortcut icon" href="asset/img/favicon.ico"/>
     <script type="text/javascript" src="asset/js/jquery-1.8.2.min.js"></script>
-    <script type="text/javascript" src="asset/js/require.js"></script>
-    <script type="text/javascript" src="asset/js/config.js"></script>
+    <script type="text/javascript" src="asset/js/dragonfly.js"></script>
 </head>
 
 <body>
@@ -26,8 +25,7 @@
 </div>
 
 <script type="text/javascript">
-require(['ui/Input'], function(Input) {
-    var input1 = new Input();
+    var input1 = new D.Input();
     input1.on('focus', function() {
         console.log('onfocus');
     });
@@ -39,13 +37,13 @@ require(['ui/Input'], function(Input) {
     });
     input1.render('container');
     
-    var input2 = new Input({
+    var input2 = new D.Input({
         type: 'password',
         value: 123
     });
     input2.render('container');
     
-    var input3 = new Input({
+    var input3 = new D.Input({
         disabled: true,
         value: 'disabled'
     });
@@ -82,7 +80,6 @@ require(['ui/Input'], function(Input) {
     $('#destroy').click(function() {
         input1.destroy();
     });
-});
 </script>
 </body>
 </html>

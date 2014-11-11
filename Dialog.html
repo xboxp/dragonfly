@@ -4,11 +4,10 @@
     <meta charset="utf-8" />
     <title>Dialog</title>
     <link rel="stylesheet" type="text/css" href="asset/css/demo.css" />
-    <link rel="stylesheet" type="text/css" href="src/asset/default/main.css" />
+    <link rel="stylesheet" type="text/css" href="asset/css/dragonfly.css" />
     <link rel="shortcut icon" href="asset/img/favicon.ico"/>
     <script type="text/javascript" src="asset/js/jquery-1.8.2.min.js"></script>
-    <script type="text/javascript" src="asset/js/require.js"></script>
-    <script type="text/javascript" src="asset/js/config.js"></script>
+    <script type="text/javascript" src="asset/js/dragonfly.js"></script>
 </head>
 
 <body>
@@ -23,8 +22,7 @@
 </div>
 
 <script type="text/javascript">
-require(['ui/Dialog'], function(Dialog) {
-    var dialog = new Dialog({
+    var dialog = new D.Dialog({
         hidden: true,
         title: 'Title',
         content: 'Content'
@@ -48,7 +46,7 @@ require(['ui/Dialog'], function(Dialog) {
     });
     
     $('#alert').click(function() {
-        Dialog.alert({
+        D.Dialog.alert({
             title: 'Wanning',
             content: 'Earth is dangerous!',
             okText: 'Got it'
@@ -56,7 +54,7 @@ require(['ui/Dialog'], function(Dialog) {
     });
     
     $('#confirm').click(function() {
-        Dialog.confirm({
+        D.Dialog.confirm({
             title: 'Confirmation',
             content: 'Go to Mars?',
             okText: 'Yes',
@@ -66,7 +64,6 @@ require(['ui/Dialog'], function(Dialog) {
             }
         });
     });
-});
 </script>
 </body>
 </html>

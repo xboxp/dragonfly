@@ -4,11 +4,10 @@
     <meta charset="utf-8" />
     <title>Button</title>
     <link rel="stylesheet" type="text/css" href="asset/css/demo.css" />
-    <link rel="stylesheet" type="text/css" href="src/asset/default/main.css" />
+    <link rel="stylesheet" type="text/css" href="asset/css/dragonfly.css" />
     <link rel="shortcut icon" href="asset/img/favicon.ico"/>
     <script type="text/javascript" src="asset/js/jquery-1.8.2.min.js"></script>
-    <script type="text/javascript" src="asset/js/require.js"></script>
-    <script type="text/javascript" src="asset/js/config.js"></script>
+    <script type="text/javascript" src="asset/js/dragonfly.js"></script>
 </head>
 
 <body>
@@ -29,8 +28,7 @@
 </div>
 
 <script type="text/javascript">
-require(['ui/Button'], function(Button) {
-    var button1 = new Button({
+    var button1 = new D.Button({
         content: 'default'
     });
     button1.on('click', function(e) {
@@ -38,19 +36,19 @@ require(['ui/Button'], function(Button) {
     });
     button1.render('container');
     
-    var button2 = new Button({
+    var button2 = new D.Button({
         content: 'dark',
         skin: 'dark'
     });
     button2.render('container');
     
-    var button3 = new Button({
+    var button3 = new D.Button({
         content: 'spring',
         skin: 'spring'
     });
     button3.render('container');
     
-    var button4 = new Button({
+    var button4 = new D.Button({
         disabled: true,
         content: 'disabled'
     });
@@ -99,7 +97,6 @@ require(['ui/Button'], function(Button) {
     $('#destroy').click(function() {
         button1.destroy();
     });
-});
 </script>
 </body>
 </html>
