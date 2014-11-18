@@ -14,7 +14,7 @@
 <h1>Dialog</h1>
 <a id="console" href="javascript:void(0)">print instance</a>
 <div class="operation">
-    <button type="button" id="show">show</button>
+    <button type="button" id="open">open</button>
     <button type="button" id="getContent">getContent</button><br />
     <button type="button" id="alert">Dialog.alert</button>
     <button type="button" id="confirm">Dialog.confirm</button><br />
@@ -33,8 +33,8 @@
         console.log(dialog);
     });
     
-    $('#show').click(function() {
-        dialog.show();
+    $('#open').click(function() {
+        dialog.open();
     });
     
     $('#getContent').click(function() {

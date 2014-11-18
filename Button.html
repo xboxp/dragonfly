@@ -22,14 +22,14 @@
     <button type="button" id="show">show</button>
     <button type="button" id="toggle">toggle</button>
     <button type="button" id="isHidden">isHidden</button><br />
-    <button type="button" id="getContent">getContent</button>
-    <button type="button" id="setContent">setContent</button><input type="text" id="content" /><br />
+    <button type="button" id="getText">getText</button>
+    <button type="button" id="setText">setText</button><input type="text" id="text" /><br />
     <button type="button" id="destroy">destroy</button>
 </div>
 
 <script type="text/javascript">
     var button1 = new D.Button({
-        content: 'default'
+        text: 'default'
     });
     button1.on('click', function(e) {
         alert('onclick');
@@ -37,20 +37,20 @@
     button1.render('container');
     
     var button2 = new D.Button({
-        content: 'dark',
+        text: 'dark',
         skin: 'dark'
     });
     button2.render('container');
     
     var button3 = new D.Button({
-        content: 'spring',
+        text: 'spring',
         skin: 'spring'
     });
     button3.render('container');
     
     var button4 = new D.Button({
         disabled: true,
-        content: 'disabled'
+        text: 'disabled'
     });
     button4.render('container');
     
@@ -86,12 +86,12 @@
         alert(button1.isHidden());
     });
     
-    $('#getContent').click(function() {
-        alert(button1.getContent());
+    $('#getText').click(function() {
+        alert(button1.getText());
     });
     
-    $('#setContent').click(function() {
-        button1.setContent($('#content').val());
+    $('#setText').click(function() {
+        button1.setText($('#text').val());
     });
     
     $('#destroy').click(function() {
